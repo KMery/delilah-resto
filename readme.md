@@ -1,31 +1,35 @@
-#**Delilah Restó**
-##A nodeJS Restful API with mysql 
+<h1>**Delilah Restó**</h1>
+<h2>A nodeJS Restful API with mysql</h2>
 
 This project is a sample of the tools that I am learning at the moment. The idea is to make an API for a restó where:
 For common users: You must be able to create an user and login, search for plates to order. 
 For admin users: You would be God (in this app at least...)
 
-###**Getting Started**
+<h3>**Getting Started**</h3>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-####**Prerequisites**
+<h4>**Prerequisites**<h4>
 
-You must have installed: 
-Mysql - I have the XAMPP version of it
-NodeJS
-    Express
-    JWT
-    sequelize
-    mysql2
-    dotenv
-    body-parser
-
+You must have installed:
+<ol>
+    <li>Mysql - I have the XAMPP version of it</li>
+    <li>NodeJS</li>
+</ol>
+You will need this dependencies:
+    <ul>
+        <li>Express</li>
+        <li>JWT</li>
+        <li>sequelize</li>
+        <li>mysql2</li>
+        <li>dotenv</li>
+        <li>body-parser</li>
+    </ul>
 These are the links to download:
     [NodeJS Downloads](https://nodejs.org/es/download/)
     Apache distribution containing MariaDB, PHP, and Perl [XAMPP] (https://www.apachefriends.org/download.html)
 
-####**Installing**
+<h4>**Installing**</h4>
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -93,7 +97,7 @@ You can check your order with
     authorization: Bearer your_token_here
 
 
-####**Author**
+<h4>**Author**</h4>
     KMery (Mayra Leiva) - newbie at web developing
 
 **Acknowledgments**
