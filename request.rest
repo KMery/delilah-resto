@@ -1,47 +1,47 @@
 GET http://localhost:5000/plates
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE5MTAxNCwiZXhwIjoxNTkyMTk0NjE0fQ.k8OcoJOkUBct87PHYArKlB2KdygIPqxl8gpVBydEeTc
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjUyMjgxNCwiZXhwIjoxNTkyNTI2NDE0fQ.6RzpD787mcEQ7i7XlL-i3oIm-IOfrY4a3tpzpI96jxE
 
 ###
-PUT http://localhost:5000/order/deleteplate/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE5MTAxNCwiZXhwIjoxNTkyMTk0NjE0fQ.k8OcoJOkUBct87PHYArKlB2KdygIPqxl8gpVBydEeTc
-Content-Type: application/json
-
-{   
-    "description": "pizza 1"
-    # "description": "salad"
-    # "description": "veggie burger,pizza napolitana"
-}
+DELETE http://localhost:5000/order/1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjcxMzYwOCwiZXhwIjoxNTkyNzE3MjA4fQ.beGx_flz8NptY1oh0rO19d_fds8hsqWKPulEDpmUBS4
 
 ###
 PUT http://localhost:5000/order/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE5MTAxNCwiZXhwIjoxNTkyMTk0NjE0fQ.k8OcoJOkUBct87PHYArKlB2KdygIPqxl8gpVBydEeTc
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjcxMzYwOCwiZXhwIjoxNTkyNzE3MjA4fQ.beGx_flz8NptY1oh0rO19d_fds8hsqWKPulEDpmUBS4
 Content-Type: application/json
 
 {   
-    # "userId": 1,
-    "description": "pizza 1"
-    # "amount":100
-    # "description": "salad 1"
-    # "status":"Confirm"
-    # "description": "veggie burger,pizza napolitana"
+    "status":"Confirm"
+    # "status":"test"
 }
 
 ###
+POST http://localhost:5000/order
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTU5MjcxMTU3OSwiZXhwIjoxNTkyNzE1MTc5fQ.tBHzvTmpxOEpIuyDmLIyeen5NPvEV1qoc2bmQ5cmw9s
+Content-Type: application/json
+
+{   
+    "userId": 2,
+    "description" : "salad 1"
+}
+###
 GET http://localhost:5000/order/user/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE5MTAxNCwiZXhwIjoxNTkyMTk0NjE0fQ.k8OcoJOkUBct87PHYArKlB2KdygIPqxl8gpVBydEeTc
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjcxMzYwOCwiZXhwIjoxNTkyNzE3MjA4fQ.beGx_flz8NptY1oh0rO19d_fds8hsqWKPulEDpmUBS4
 
 ###
 GET http://localhost:5000/order
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE5MTAxNCwiZXhwIjoxNTkyMTk0NjE0fQ.k8OcoJOkUBct87PHYArKlB2KdygIPqxl8gpVBydEeTc
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjcxMzYwOCwiZXhwIjoxNTkyNzE3MjA4fQ.beGx_flz8NptY1oh0rO19d_fds8hsqWKPulEDpmUBS4
 
 ###
-POST http://localhost:5000/order/new
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE5MTAxNCwiZXhwIjoxNTkyMTk0NjE0fQ.k8OcoJOkUBct87PHYArKlB2KdygIPqxl8gpVBydEeTc
+POST http://localhost:5000/order
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjcxMzYwOCwiZXhwIjoxNTkyNzE3MjA4fQ.beGx_flz8NptY1oh0rO19d_fds8hsqWKPulEDpmUBS4
+Content-Type: application/json
 
-# {   
-#     # "userId": "1",
-#     "description" : ""
-# }
+{   
+    "userId": 1,
+    "description" : "salad 1",
+    "quantity": 5
+}
 ###
 GET http://localhost:5000/plates/1
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MTgzMjg2MywiZXhwIjoxNTkxODM2NDYzfQ.AMgY3xCBVj0TUU15L7bhkgcgODR8isiQxabP4v43t-8
@@ -117,7 +117,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/plates
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE4NDczNSwiZXhwIjoxNTkyMTg4MzM1fQ.GEY8J1Xb_OqfP9TFdXQBRyWoITB-mkg0WwJo91B0AMw
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjcxMzYwOCwiZXhwIjoxNTkyNzE3MjA4fQ.beGx_flz8NptY1oh0rO19d_fds8hsqWKPulEDpmUBS4
 Content-Type: application/json
 
 {
@@ -145,7 +145,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/plates
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE5MTAxNCwiZXhwIjoxNTkyMTk0NjE0fQ.k8OcoJOkUBct87PHYArKlB2KdygIPqxl8gpVBydEeTc
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjcxMzYwOCwiZXhwIjoxNTkyNzE3MjA4fQ.beGx_flz8NptY1oh0rO19d_fds8hsqWKPulEDpmUBS4
 Content-Type: application/json
 
 {
