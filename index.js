@@ -189,30 +189,15 @@ app.delete('/plates/:idPlate', [authToken, isAdmin], (req, res) => {
 
 // Get a new order id
 app.post('/order', [authToken, isOnePlate], async (req, res) => {
-    // var plates = req.body.description.split(",")
-    // console.log(plates);
-    // const bearerHeader = req.headers['authorization'];
-    // const bearer = bearerHeader.split(" ");
-    // const bearerAuth = bearer[1];
-    // // var decoded = jwt.decode(bearerAuth, process.env.ACCESS_TOKEN_SECRET);
-// 
-    // await User.findOne({
-        // where: {
-            // nameUser: decoded.username
-        // }
-    // }).then(user => )
-    // 
+
     await Plates.findOne({
         where: {
             plate: req.body.description
             }
         }).then(plate =>
-            Order.create(req.body) 
-            // .then(order => console.log(order));  
+            Order.create(req.body)  
                 .then(order =>
-                // console.log(plate.dataValues.price))
                     Order.update({
-                        // amount: plate.dataValues.pric+order.     _previousDataValues.amount
                             amount: (plate.dataValues.price*req.body.quantity),
                             quantity: req.body.quantity
                         },{
@@ -236,14 +221,9 @@ app.post('/order', [authToken, isOnePlate], async (req, res) => {
                 }).then(result => {
                     res.status(400).send('userId, description, quantity required')
                 })
-                // return res.status(404).send('Cannot find plate or   idUser');     
+                
             })
-    )        
-        // .then(order => 
-        //     res.json(order)
-        //     // console.log(order);
-            
-        //     )
+    )   
 });
 
 //Middleware to check if there is only one plate in description
@@ -280,39 +260,6 @@ app.put('/order/:idOrder', [authToken, isAdmin], async (req, res, next) => {
     } else {
         return res.status(400).send("Valid status are: "+state)
     }
-
-    
-
-    // await Plates.findOne({
-    //         where: {
-    //             plate: req.body.description
-    //         }
-    //     })
-    //     .then(food =>
-    //         Order.findOne({
-    //             where: {
-    //                 id: req.params.idOrder
-    //                 }
-    //             }).then(order => 
-    //                 Order.update({
-    //                     userId: req.body.userId,
-    //                     description: order._previousDataValues.description+','+req.body.description,
-    //                     amount: food.dataValues.price+order._previousDataValues.amount,
-    //                     status: req.body.status
-    //                     }, {where: {
-    //                         id: req.params.idOrder
-    //                     }}
-    //                 ).then(function(rowsUpdated) {
-    //                         res.json({
-    //                             rowsUpdated: rowsUpdated,
-    //                             message: 'Your order was updated'
-    //                         })         
-    //                     })  
-    //             )          
-    //     ).catch(function (err) {
-    //         // console.log(err);            
-    //         return res.status(404).send('Cannot find plate or idUser');
-    //     })    
 })
 
 app.delete('/order/:idOrder', [authToken, isAdmin], async (req, res, next) => {
@@ -331,38 +278,6 @@ app.delete('/order/:idOrder', [authToken, isAdmin], async (req, res, next) => {
     })
 })
 
-//Delete a plate of an order (before confirm it)
-// app.put('/order/deleteplate/:idOrder', [authToken, isOnePlate], async (req, res, next) => {
-//     await Plates.findOne({
-//         where: {
-//             plate: req.body.description
-//         }
-//     })
-//     .then(food => 
-//             Order.findOne({
-//                 where: {
-//                     id: req.params.idOrder
-//                 }
-//             })
-//             .then(order => 
-//                     Order.update({
-//                         description: order._previousDataValues.description.replace(req.body.description, ""),
-//                         amount: order._previousDataValues.amount-food.dataValues.price,
-//                     }, {where: {
-//                             id: req.params.idOrder
-//                         }}
-//                     )
-//                 )
-//                 .then(function(rowsUpdated) {
-//                     res.json({
-//                         rowsUpdated: rowsUpdated,
-//                         message: 'A plate was deleted'
-//                     })
-//                 })
-//         ).catch(function (err){
-//             return res.status(404).send('Cannot find plate to delete');
-//         })
-// })
 
 // All the orders - admin required
 app.get('/order', [authToken, isAdmin], (req, res) => {
