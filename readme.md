@@ -1,4 +1,4 @@
-<h1>**Delilah Restó**</h1>
+<h1>**Resto app**</h1>
 <h2>A nodeJS Restful API with mysql</h2>
 
 This project is a sample of the tools that I am learning at the moment. The idea is to make an API for a restó where:
@@ -25,18 +25,16 @@ These are the links to download:
 
 A step by step series of examples that tell you how to get a development env running
 
-    1- clone the repository in a terminal with 
-    git clone https://github.com/KMery/deliah-resto.git
+    1- clone the repository this repository
+    git clone https://github.com/KMery/simpleCRUDapp.git
 
     2- Change directory with cd ~/deliah-resto
 
     3- Install dependencies with npm install
         This will install the following dependencies:
             Express
-            JWT
             sequelize
             mysql2
-            dotenv
             body-parser
 
     4- Run the XAMPP to start mysql and phpmyadmin
@@ -46,55 +44,26 @@ A step by step series of examples that tell you how to get a development env run
     You must see a messege in the console if all run OK
 
 <h4>**Verifying if all is OK**</h4>
-Just to check that if is all in order you can execute the following request to create an user:
+Just to check that if is all in order you can execute the following request:
 
-    POST http://localhost:5000/users
+    POST http://localhost:5000/products
     Content-Type: application/json
 
     {
-        "nameUser": "user",
-        "adress": "Neverland",
-        "telephone": 333111444,
-        "mail": "mail1@mail.com",
-        "password": "test"
+        "plate": "pizza",
+        "price": "200.5"
     }
 
-then try to login with
+    GET http://localhost:5000/products
 
-    POST http://localhost:5000/login
-    Content-Type: application/json
 
-    {
-        "name": "user",
-        "password": "test"
-    }
+You can check your plate with
 
-this would give you a token to use to create an order or to see the plates:
+    GET http://localhost:5000/product/:idPlate
 
-    GET http://localhost:5000/plates
-    authorization: Bearer your_token_here
+And you also can delete it 
 
-Now that you know what plates are availabl you can start an order
-
-    POST http://localhost:5000/order/
-    authorization: Bearer your_token_here
-    Content-Type: application/json
-
-    {   
-        "userId": 1,
-        "description" : "salad 1",
-        "quantity": 2
-    }
-
-You can check your order with
-
-    GET http://localhost:5000/order/user/:idOrder
-    authorization: Bearer your_token_here
-
-And you also can delete it (admin only)
-
-    DELETE http://localhost:5000/plates/:idOrder
-    authorization: Bearer your_token_here
+    DELETE http://localhost:5000/product/:idPlate
 
 
 <h3>**Author**</h3>
@@ -102,6 +71,5 @@ And you also can delete it (admin only)
 
 <h4>**Acknowledgments**</h4>
 <ul>
-    <li>Acamica</li>
-    <li>StackOverFlow communitty</li>
+    <li>Udemy</li>
 <ul>

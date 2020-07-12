@@ -1,173 +1,19 @@
-GET http://localhost:5000/plates
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-
+GET http://localhost:7000/product/1
 ###
-DELETE http://localhost:5000/order/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-
+GET http://localhost:7000/products
 ###
-PUT http://localhost:5000/order/2
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-Content-Type: application/json
-
-{   
-    # "status":"Confirm"
-    "amount": 500
-}
-
-###
-POST http://localhost:5000/order
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc4MjY2NSwiZXhwIjoxNTkyNzg2MjY1fQ.r3CMSqtZ2yGZDgLcKIl__U4mjNDefyPZWdlhRpArKD0
-Content-Type: application/json
-
-{   
-    "userId": 2,
-    "description" : "salad 1"
-}
-###
-GET http://localhost:5000/order/user/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-
-###
-GET http://localhost:5000/order
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-
-###
-POST http://localhost:5000/order
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-Content-Type: application/json
-
-{   
-    "userId": 1,
-    "description" : "pizza 1",
-    "quantity": 1
-}
-###
-GET http://localhost:5000/plates/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MTgzMjg2MywiZXhwIjoxNTkxODM2NDYzfQ.AMgY3xCBVj0TUU15L7bhkgcgODR8isiQxabP4v43t-8
-
-###
-PUT http://localhost:5000/plates/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
+POST http://localhost:7000/products
 Content-Type: application/json
 
 {
-    "price": 200
+    "plate": "salad",
+    "price": 75
 }
-
 ###
-DELETE http://localhost:5000/plates/3
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-
-###
-DELETE http://localhost:5000/users/2
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc4ODI3NCwiZXhwIjoxNTkyNzkxODc0fQ.Sr6DtqFqYFV7-75t5foTlOL2Zeh5snh-6Xc6irGuGFI
-
-
-###
-GET http://localhost:5000/users/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc4ODI3NCwiZXhwIjoxNTkyNzkxODc0fQ.Sr6DtqFqYFV7-75t5foTlOL2Zeh5snh-6Xc6irGuGFI
-
-###
-PUT http://localhost:5000/users/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc4ODI3NCwiZXhwIjoxNTkyNzkxODc0fQ.Sr6DtqFqYFV7-75t5foTlOL2Zeh5snh-6Xc6irGuGFI
+PUT http://localhost:7000/products
 Content-Type: application/json
 
 {
-    "name": "kmery",
-    # "adress": "FakeStreet 321",
-    # "telephone": 222111333,
-    # "mail": "mail3@mail.com",
-    "password": "test"
+    "plate": "salad",
+    "price": 75
 }
-
-###
-GET http://localhost:5000/plates/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-
-###
-GET http://localhost:5000/users/1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5MjE4Njk5MiwiZXhwIjoxNTkyMTkwNTkyfQ.gmlVsvVRBWGZ5dyVuEoG4a2cZXYZdu7sfaS7So-_WnY
-Content-Type: application/json
-
-###
-POST http://localhost:5000/users
-Content-Type: application/json
-
-{
-    # "nameUser": "user"
-    "password": "test"
-}
-
-###
-POST http://localhost:5000/users
-Content-Type: application/json
-
-{
-    "nameUser": "user",
-    "adress": "Neverland",
-    "telephone": 333111444,
-    "mail": "mail1@mail.com",
-    "password": "test"
-}
-
-###
-POST http://localhost:5000/plates
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-Content-Type: application/json
-
-{
-    "plate": "burger 3",
-    "price": 275
-}
-
-###
-POST http://localhost:5000/users
-Content-Type: application/json
-
-{
-    "nameUser": "kmery",
-    "admin": true, 
-    "adress": "Neverland",
-    "telephone": 333111444,
-    "mail": "mail1@mail.com",
-    "password": "test"
-}
-###
-GET http://localhost:5000/users
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc4ODI3NCwiZXhwIjoxNTkyNzkxODc0fQ.Sr6DtqFqYFV7-75t5foTlOL2Zeh5snh-6Xc6irGuGFI
-
-
-###
-POST http://localhost:5000/plates
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImttZXJ5IiwiYWRtaW4iOnRydWUsImlhdCI6MTU5Mjc5MDQ1OSwiZXhwIjoxNTkyNzk0MDU5fQ.aVVbLDsIXOTAiFPy3EF62Ca4J4xvbNXLQxi-LLde0ik
-Content-Type: application/json
-
-{
-    "plate": "pizza 1",
-    "price": 150.50
-}
-
-
-###
-POST http://localhost:5000/login
-Content-Type: application/json
-
-{
-    "name": "kmery",
-    "password": "test"
-}
-
-###
-POST http://localhost:5000/login
-Content-Type: application/json
-
-{
-    "name": "user",
-    "password": "test"
-}
-
-###
-GET http://localhost:5000/users
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTU5MDI3Mjg0NywiZXhwIjoxNTkwMjc2NDQ3fQ.fA7gjP2cnts_4-rnDHbVbNbyQ0aw3KUgDqT5DF9HJNA
-Content-Type: application/json
